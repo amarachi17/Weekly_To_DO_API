@@ -24,3 +24,9 @@ REST_FRAMEWORK = {
     )
 }
 
+# api - Models.py file
+## Created all models for the database
+Class User - User model to store user information and hash user password
+Class Category - Category to store category information
+Class Task - Add task status and priority
+Class Task Reminder - Set reminder for each task
