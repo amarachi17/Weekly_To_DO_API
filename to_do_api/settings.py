@@ -131,5 +131,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
     )
+}
+
+# SimpleJWT to customize token expiration
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=2), # Enable token to expire in 2 hours
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7), # Refresh token should lasts for 7 days
+    'ROTATE_REFRESH_TOKENS': True,
 }
