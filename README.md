@@ -44,4 +44,9 @@ SIMPLE_JWT = {
 ## Creating Authentication views for Registration and login
 
 # Create Serializers.py
-Class RegisterUserSerializers - Registers User model in serializer and hash the password
+- Class RegisterUserSerializers - Registers User model in serializer and hash the password
+- Class LoginUserSerializers - Login Users that has been registered and validates credentials before returning a JWT token.
+- Class CategoryUserSerializers - Creating a serializer for category model
+- Class TaskUserSerializers - Creating a serializer for Task model
+- Class TaskReminderSerializer - Creating a serializer for Task Reminder model
+
