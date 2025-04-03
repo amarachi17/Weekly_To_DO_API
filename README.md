@@ -51,3 +51,17 @@ SIMPLE_JWT = {
 ## Creating Authentication views 
 - Class RegisterView - Creating views for Register User Serializer
 - Class LoginView - Creating views for Login User Serializer
+
+## Creating urls patterns
+path('register/', RegisterView.as_view(), name='register-user') - Creating urls for users to register
+path('login/', LoginView.as_view(), name='login-user') - Creating urls for users to login
+path('token-refresh/', TokenRefreshView.as_view(), name='token-refresh') - Creating urls for users to refresh their tokens
+
+path('categories/', CategoryListView.as_view(), name='category-list-create') - Creating urls for categories
+path('categories/<uuid:pk>/', CategoryDetailView.as_view(), name='category-detail') - Creating urls for categories by id
+
+path('tasks/', TaskListView.as_view(), name='task-list-create') - Creating urls for task
+path('tasks/<uuid:pk>/', TaskDetailView.as_view(), name='task-detail') - Creating urls for task by id 
+
+path('reminders/', TaskReminderListView.as_view(), name='reminder-list-create') - Creating urls for reminder
+path('reminders/<uuid:pk>/', TaskReminderDetailView, name='reminder-detail') - Creating urls for reminder by id
