@@ -34,7 +34,6 @@ class LoginView(generics.GenericAPIView):
             "access": str(refresh.access_token),
             "user": {
                 "id": user.id,
-                "username": user.username,
                 "email": user.email,
             },
         }, status =status.HTTP_200_OK)
