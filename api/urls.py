@@ -1,13 +1,14 @@
 from django.urls import path
-from rest_framework_simplejwt.views import TokenRefreshView
-from .views import RegisterView, LoginView, CategoryListView, CategoryDetailView, TaskListView, TaskDetailView, TaskReminderListView, TaskReminderDetailView
+from rest_framework_simplejwt.views import TokenRefreshView, TokenObtainPairView
+from .views import CustomTokenObtainPairView, RegisterView, LoginView, CategoryListView, CategoryDetailView, TaskListView, TaskDetailView, TaskReminderListView, TaskReminderDetailView
 
 # Creating urlpatterns 
 urlpatterns = [
     # Authentiations
     path('register/', RegisterView.as_view(), name='register-user'),
     path('login/', LoginView.as_view(), name='login-user'),
-    path('token-refresh/', TokenRefreshView.as_view(), name='token-refresh'),
+    # path('token/', CustomTokenObtainPairView.as_view(), name='token-obtain-pair'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token-refresh'),
 
     # Category API
     path('categories/', CategoryListView.as_view(), name='category-list-create'),
@@ -19,5 +20,5 @@ urlpatterns = [
 
     # Task Reminder API
     path('reminders/', TaskReminderListView.as_view(), name='reminder-list-create'),
-    path('reminders/<uuid:pk>/', TaskReminderDetailView, name='reminder-detail'),
+    path('reminders/<uuid:pk>/', TaskReminderDetailView.as_view(), name='reminder-detail'),
 ]
