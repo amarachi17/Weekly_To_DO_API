@@ -54,7 +54,7 @@ class TaskUserSerializers(serializers.ModelSerializer):
         fields = ['id', 'user', 'category', 'title', 'description', 'due_date', 'status', 'priority', 'created_at', 'updated_at']
 
 # Serializers for Task Reminder model.
-class TaskReminderSerializer(serializers.ModelSerializer):
+class TaskReminderSerializers(serializers.ModelSerializer):
     class Meta:
         model = TaskReminder
         fields = ['id', 'task', 'reminder_at', 'created_at']
