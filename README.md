@@ -1,5 +1,5 @@
 # Weekly_To_DO_API
-- cloned this repository
+- cloned this repository 
 
 # Started a project
 - django-admin startproject to_do_api.
@@ -65,3 +65,14 @@ path('tasks/<uuid:pk>/', TaskDetailView.as_view(), name='task-detail') - Creatin
 
 path('reminders/', TaskReminderListView.as_view(), name='reminder-list-create') - Creating urls for reminder
 path('reminders/<uuid:pk>/', TaskReminderDetailView, name='reminder-detail') - Creating urls for reminder by id
+
+## API ENDPOINTS
+# Endpoint        Method            Description
+/api/register/     POST            Register a new user
+/api/login/        POST        Get access and refresh token
+/api/token/refresh/ POST            Refresh token
+/api/tasks/       GET/POST          List or create tasks
+/api/tasks/<id>/  GET/PUT/DELETE        Retrieve, update, 
+                                          delete task
+/api/categories/   GET/POST        List or create categories
+/api/reminders/    GET/POST    List or create task reminders
