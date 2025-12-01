@@ -1,0 +1,21 @@
+{% extends 'frontend/base.html' %}
+
+
+{% block content %}
+
+<div class="max-w-md mx-auto bg-white p-6 shadow rounded">
+
+    <h2 class="text-xl font-bold mb-4">Create Account</h2>
+    <form id="registerForm">
+        <input type="text" id="username" placeholder="Username" class="w-full p-2 mb-3 border rounded">
+        <input type="email" id="email" placeholder="Email" class="w-full p-2 mb-3 border rounded">
+        <input type="password" id="password" placeholder="Password" class="w-full p-2 mb-3 border rounded">
+
+        <button class="bg-green-600 w-full text-white p-2 rounded">Register</button>
+    </form>
+</div>
+
+<script src="/static/js/auth.js"></script>
+
+{% endblock content %}
+    
