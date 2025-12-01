@@ -75,6 +75,9 @@ TEMPLATES = [
     },
 ]
 
+TEMPLATES[0]['DIRS'] = [BASE_DIR / "frontend" / "templates"]
+STATICFILES_DIRS = [BASE_DIR / "frontend" / "static"]
+
 WSGI_APPLICATION = 'to_do_api.wsgi.application'
 
 
