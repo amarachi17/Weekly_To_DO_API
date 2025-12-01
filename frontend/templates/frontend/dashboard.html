@@ -1,0 +1,20 @@
+{% extends 'frontend/base.html' %}
+
+{% block content %}
+
+<h1 class="text-2xl font-bold mb-4">Dashboard</h1>
+
+<div class="grid grid-cols-3 gab-4">
+    <a href="/categories/" class="bg-white shadow p-4 rounded text-center">
+        Categories
+    </a>
+    <a href="/tasks/" class="bg-white shadow p-4 rounded text-center">
+        Tasks
+    </a>
+    <a href="/reminders/" class="bg-white shadow p-4 rounded text-center">
+        Reminders
+    </a>
+
+</div>
+
+{% endblock content %}
