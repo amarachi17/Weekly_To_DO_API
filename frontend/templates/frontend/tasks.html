@@ -1,0 +1,24 @@
+{% extends 'frontend/base.html' %}
+
+{% block content %}
+
+<h2 class="text-xl font-bold mb-4">Tasks</h2>
+
+<div class="bg-whitw p-4 shadow rounded mb-4">
+
+    <input id="taskTitle" class="w-full p-2 border rounded mb-2" placeholder="Task Title">
+
+    <textarea id="taskDesc" class="w-full p-2 border rounded mb-2" placeholder="Description"></textarea>
+
+    <input id="taskCategory" class="w-full p-2 border rounded mb-2" placeholder="Category ID">
+
+    <button onclick="createTask()" class="bg-blue-600 text-white p-2 rounded w-full">
+        Add Task
+    </button>
+</div>
+
+<div id="taskList"></div>
+
+<script src="/static/js/tasks.js"></script>
+
+{% endblock content %}
