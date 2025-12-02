@@ -1,13 +1,14 @@
 from django.urls import path
-from django.shortcuts import render
+from . import views
 
 urlpatterns = [
-    path("login/", lambda request: render(request, "frontend/login.html"), name="login-page"),
-    path("register/", lambda request: render(request, "frontend/register.html"), name="register-page"),
-    path("dashboard/", lambda request: render(request, "frontend/dashboard.html"), name="dashboard"),
+    path("", views.index, name="home"),
+    path("login/", views.login_page, name="login"),
+    path("register/", views.register_page, name="register"),
+    path("dashboard/", views.dashboard_page, name="dashboard"),
 
-    path("categories/", lambda request: render(request, "frontend/categories.html"), name="categories"),
-    path("tasks/", lambda request: render(request, "frontend/tasks.html"), name="tasks"),
-    path("reminders/", lambda request: render(request, "frontend/reminders.html"), name="reminders"),
+    path("categories/", views.categories_page, name="categories"),
+    path("tasks/", views.tasks_page, name="tasks"),
+    path("reminders/", views.reminders_page, name="reminders"),
 
 ]
