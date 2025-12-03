@@ -1,11 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weekly To-Do API</title>
+    <title>Weekly To-Do </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
         // Enanling dark/light mode toggle
         function toggleTheme(){
             const html = document.documentElement;
@@ -14,8 +18,9 @@
 
         }
         document.addEventListener('DOMContentLoaded', () => {
-            const saved = localStorage.getItem('theme');
-            if (saved === 'light') document.documentElement.classList.remove('dark');
+            if (localStorage.getItem("theme") == "dark") {
+                document.documentElement.classList.add("dark");
+            }
 
         });
     </script>
@@ -23,16 +28,22 @@
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen flex items-center justify-center p-6">
     <div class="w-full max-w-md bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-8">
-        <h1 class="text-3xl font-bold mb-6 text-center">Weekly-To-Do</h1>
+        <!-- <h1 class="text-3xl font-bold mb-6 text-center">Weekly-To-Do</h1> -->
 
         <button onclick="toggleTheme()" class="absolute top-4 right-4 bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-xl">🌓</button>
 
-        <div class="space-y-4">
+        <div class="bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-8">
+            {% block content %}{% endblock %}
+        </div>
+        
+        <!-- <div class="space-y-4">
             <a href="/login/" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-xl">Login</a>
             <a href="/register/" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-xl">Register</a>
             <a href="/dashboard/" class="block w-full text-center bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-xl">Dashboard</a>
 
-        </div>
+        </div> -->
     </div>
+
+   
 </body>
 </html>
