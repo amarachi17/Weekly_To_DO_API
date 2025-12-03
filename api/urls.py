@@ -5,9 +5,9 @@ from .views import RegisterView, LoginView, CategoryListView, CategoryDetailView
 # Creating urlpatterns 
 urlpatterns = [
     # Authentiations
-    path('register/', RegisterView.as_view(), name='register-user'),
-    path('login/', LoginView.as_view(), name='login-user'),
-    path('token/refresh/', TokenRefreshView.as_view(), name='token-refresh'),
+    path('auth/register/', RegisterView.as_view(), name='register-user'),
+    path('auth/login/', LoginView.as_view(), name='login-user'),
+    path('auth/token/refresh/', TokenRefreshView.as_view(), name='token-refresh'),
 
     # Category API
     path('categories/', CategoryListView.as_view(), name='category-list-create'),
