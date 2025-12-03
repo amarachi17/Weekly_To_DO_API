@@ -1,20 +1,37 @@
 {% extends 'frontend/base.html' %}
+{% load static %}
 
 {% block content %}
 
 <h1 class="text-2xl font-bold mb-4">Dashboard</h1>
 
-<div class="grid grid-cols-3 gab-4">
-    <a href="/categories/" class="bg-white shadow p-4 rounded text-center">
+<div class="grid grid-cols-1 gab-4 md:grid-cols-3 mb-4">
+    <a href="{% url 'categories' %}" class="bg-white shadow p-4 rounded text-center">
         Categories
     </a>
-    <a href="/tasks/" class="bg-white shadow p-4 rounded text-center">
+    <a href="{% url 'tasks' %}" class="bg-white shadow p-4 rounded text-center">
         Tasks
     </a>
-    <a href="/reminders/" class="bg-white shadow p-4 rounded text-center">
+    <a href="{% url 'reminders' %}" class="bg-white shadow p-4 rounded text-center">
         Reminders
     </a>
 
 </div>
+
+<button id="logoutBtn" class="bg-red-600 text-white p-2 rounded">Logout</button>
+
+<script>
+  document.getElementById('logoutBtn').addEventListener('click', () => {
+    localStorage.removeItem('access');
+    localStorage.removeItem('refresh');
+    window.location.href = "/login/";
+  });
+
+  // Protect dashboard: if not authenticated, go to login
+  if (!localStorage.getItem('access')) {
+    window.location.href = "/login/";
+  }
+</script>
+
 
 {% endblock content %}
