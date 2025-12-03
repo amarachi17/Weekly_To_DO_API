@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 def index(request):
-    return render(request, 'frontend/base.html')
+    return redirect('login')
 
 def login_page(request): 
     return render(request, 'frontend/login.html')
@@ -21,3 +21,4 @@ def tasks_page(request):
 
 def reminders_page(request): 
     return render(request, 'frontend/reminders.html')
+
